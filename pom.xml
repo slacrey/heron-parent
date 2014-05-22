@@ -30,8 +30,8 @@
         <connection>scm:git:https://github.com/slacrey/heron-parent.git</connection>
         <developerConnection>scm:git:https://github.com/slacrey/heron-parent.git</developerConnection>
         <url>https://github.com/slacrey/heron-parent.git</url>
-      <tag>heron-parent-1.0.0</tag>
-  </scm>
+        <tag>heron-parent-1.0.0</tag>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -104,6 +104,8 @@
                         <checkModificationExclude>.idea</checkModificationExclude>
                         <checkModificationExclude>heron-parent.iml</checkModificationExclude>
                         <checkModificationExclude>heron-core.iml</checkModificationExclude>
+                        <checkModificationExclude>pom.xml</checkModificationExclude>
+                        <checkModificationExclude>heron-core/pom.xml</checkModificationExclude>
                     </checkModificationExcludes>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <useReleaseProfile>false</useReleaseProfile>
@@ -113,17 +115,6 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </snapshotRepository>
-        <repository>
-            <id>oss</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <profiles>
 
@@ -177,7 +168,54 @@
                 </snapshotRepository>
             </distributionManagement>
         </profile>
-
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <!-- Source -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Javadoc -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                        <version>2.9.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <snapshotRepository>
+                    <id>oss</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                </snapshotRepository>
+                <repository>
+                    <id>oss</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+                </repository>
+            </distributionManagement>
+        </profile>
     </profiles>
 
     <modules>
