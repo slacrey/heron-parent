@@ -43,6 +43,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <github.username>slacrey</github.username>
         <github.password>lf0554111</github.password>
+        <gpg.passphrase>OSSRH-9954</gpg.passphrase>
     </properties>
 
     <repositories>
@@ -76,10 +77,6 @@
     <profiles>
         <profile>
             <id>sonatype-oss-release</id>
-            <properties>
-                <gpg.executable>gpg2</gpg.executable>
-                <gpg.passphrase>OSSRH-9954</gpg.passphrase>
-            </properties>
             <activation>
                 <property>
                     <name>performRelease</name>
