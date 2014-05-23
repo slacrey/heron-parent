@@ -44,7 +44,6 @@
         <github.username>slacrey</github.username>
         <github.password>lf0554111</github.password>
         <gpg.passphrase>OSSRH-9954</gpg.passphrase>
-        <release.arguments>-Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release</release.arguments>
     </properties>
 
     <repositories>
@@ -154,7 +153,7 @@
                                 <useReleaseProfile>false</useReleaseProfile>
                                 <releaseProfiles>release</releaseProfiles>
                                 <goals>deploy</goals>
-                                <arguments>${release.arguments}</arguments>
+                                <arguments>-Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release</arguments>
                             </configuration>
                         </plugin>
                     </plugins>
