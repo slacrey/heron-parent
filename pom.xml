@@ -30,8 +30,8 @@
         <connection>scm:git:https://github.com/slacrey/heron-parent.git</connection>
         <developerConnection>scm:git:https://github.com/slacrey/heron-parent.git</developerConnection>
         <url>https://github.com/slacrey/heron-parent.git</url>
-        <tag>heron-parent-1.0.0</tag>
-    </scm>
+      <tag>heron-parent-1.0.0</tag>
+  </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
