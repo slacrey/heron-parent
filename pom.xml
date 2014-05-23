@@ -147,7 +147,7 @@
                                     <checkModificationExclude>heron-core/pom.xml</checkModificationExclude>
                                 </checkModificationExcludes>
                                 <autoVersionSubmodules>true</autoVersionSubmodules>
-                                <mavenExecutorId>forked-path</mavenExecutorId>
+                                <!--<mavenExecutorId>forked-path</mavenExecutorId>-->
                                 <useReleaseProfile>false</useReleaseProfile>
                                 <releaseProfiles>sonatype-oss-release</releaseProfiles>
                                 <goals>deploy</goals>
