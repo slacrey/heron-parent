@@ -130,6 +130,9 @@
                                 </goals>
                             </execution>
                         </executions>
+                        <configuration>
+                            <passphrase>${gpg.passphrase}</passphrase>
+                        </configuration>
                     </plugin>
                 </plugins>
 
@@ -148,11 +151,9 @@
                                     <checkModificationExclude>heron-core/pom.xml</checkModificationExclude>
                                 </checkModificationExcludes>
                                 <autoVersionSubmodules>true</autoVersionSubmodules>
-                                <!--<mavenExecutorId>forked-path</mavenExecutorId>-->
                                 <useReleaseProfile>false</useReleaseProfile>
                                 <releaseProfiles>sonatype-oss-release</releaseProfiles>
                                 <goals>deploy</goals>
-                                <!--<arguments>-Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release </arguments>-->
                             </configuration>
                         </plugin>
                     </plugins>
