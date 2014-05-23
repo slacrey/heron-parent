@@ -26,18 +26,17 @@
         </developer>
     </developers>
 
-    <!--<scm>-->
-        <!--<connection>scm:git:https://github.com/slacrey/heron-parent.git</connection>-->
-        <!--<developerConnection>scm:git:https://github.com/slacrey/heron-parent.git</developerConnection>-->
-        <!--<url>https://github.com/slacrey/heron-parent.git</url>-->
-    <!--</scm>-->
-
     <scm>
-        <connection>scm:git:git@github.com:slacrey/heron-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:slacrey/heron-parent.git</developerConnection>
-        <url>git@github.com:slacrey/heron-parent.git</url>
+        <connection>scm:git:https://github.com/slacrey/heron-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/slacrey/heron-parent.git</developerConnection>
+        <url>https://github.com/slacrey/heron-parent.git</url>
     </scm>
 
+    <!--<scm>-->
+        <!--<connection>scm:git:git@github.com:slacrey/heron-parent.git</connection>-->
+        <!--<developerConnection>scm:git:git@github.com:slacrey/heron-parent.git</developerConnection>-->
+        <!--<url>git@github.com:slacrey/heron-parent.git</url>-->
+    <!--</scm>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -150,9 +149,9 @@
                                 <autoVersionSubmodules>true</autoVersionSubmodules>
                                 <mavenExecutorId>forked-path</mavenExecutorId>
                                 <useReleaseProfile>false</useReleaseProfile>
-                                <!--<releaseProfiles>release</releaseProfiles>-->
+                                <releaseProfiles>sonatype-oss-release</releaseProfiles>
                                 <goals>deploy</goals>
-                                <arguments>-Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release </arguments>
+                                <!--<arguments>-Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release </arguments>-->
                             </configuration>
                         </plugin>
                     </plugins>
