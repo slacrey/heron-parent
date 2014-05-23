@@ -26,24 +26,23 @@
         </developer>
     </developers>
 
-    <!--<scm>-->
-    <!--<connection>scm:git:https://github.com/slacrey/heron-parent.git</connection>-->
-    <!--<developerConnection>scm:git:https://github.com/slacrey/heron-parent.git</developerConnection>-->
-    <!--<url>https://github.com/slacrey/heron-parent.git</url>-->
-    <!--</scm>-->
-
     <scm>
-        <connection>scm:git:git@github.com:slacrey/heron-parent.git</connection>
-        <developerConnection>scm:git:git@github.com:slacrey/heron-parent.git</developerConnection>
-        <url>git@github.com:slacrey/heron-parent.git</url>
+        <connection>scm:git:https://github.com/slacrey/heron-parent.git</connection>
+        <developerConnection>scm:git:https://github.com/slacrey/heron-parent.git</developerConnection>
+        <url>https://github.com/slacrey/heron-parent.git</url>
     </scm>
+
+    <!--<scm>-->
+        <!--<connection>scm:git:git@github.com:slacrey/heron-parent.git</connection>-->
+        <!--<developerConnection>scm:git:git@github.com:slacrey/heron-parent.git</developerConnection>-->
+        <!--<url>git@github.com:slacrey/heron-parent.git</url>-->
+    <!--</scm>-->
 
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <github.username>slacrey</github.username>
         <github.password>lf0554111</github.password>
-        <gpg.passphrase>OSSRH-9954</gpg.passphrase>
     </properties>
 
     <repositories>
@@ -77,6 +76,10 @@
     <profiles>
         <profile>
             <id>sonatype-oss-release</id>
+            <properties>
+                <gpg.executable>gpg2</gpg.executable>
+                <gpg.passphrase>OSSRH-9954</gpg.passphrase>
+            </properties>
             <activation>
                 <property>
                     <name>performRelease</name>
@@ -150,9 +153,9 @@
                                 <autoVersionSubmodules>true</autoVersionSubmodules>
                                 <mavenExecutorId>forked-path</mavenExecutorId>
                                 <useReleaseProfile>false</useReleaseProfile>
-                                <releaseProfiles>release</releaseProfiles>
+                                <releaseProfiles>sonatype-oss-release</releaseProfiles>
                                 <goals>deploy</goals>
-                                <arguments>-Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release</arguments>
+                                <arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
                             </configuration>
                         </plugin>
                     </plugins>
