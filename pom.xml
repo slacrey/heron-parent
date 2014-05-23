@@ -26,17 +26,17 @@
         </developer>
     </developers>
 
-    <scm>
-        <connection>scm:git:https://github.com/slacrey/heron-parent.git</connection>
-        <developerConnection>scm:git:https://github.com/slacrey/heron-parent.git</developerConnection>
-        <url>https://github.com/slacrey/heron-parent.git</url>
-    </scm>
-
     <!--<scm>-->
-    <!--<connection>scm:git:git@github.com:slacrey/heron-parent.git</connection>-->
-    <!--<developerConnection>scm:git:git@github.com:slacrey/heron-parent.git</developerConnection>-->
-    <!--<url>git@github.com:slacrey/heron-parent.git</url>-->
+    <!--<connection>scm:git:https://github.com/slacrey/heron-parent.git</connection>-->
+    <!--<developerConnection>scm:git:https://github.com/slacrey/heron-parent.git</developerConnection>-->
+    <!--<url>https://github.com/slacrey/heron-parent.git</url>-->
     <!--</scm>-->
+
+    <scm>
+        <connection>scm:git:git@github.com:slacrey/heron-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:slacrey/heron-parent.git</developerConnection>
+        <url>git@github.com:slacrey/heron-parent.git</url>
+    </scm>
 
 
     <properties>
@@ -76,9 +76,8 @@
 
     <profiles>
         <profile>
-            <id>release-sign-artifacts</id>
+            <id>sonatype-oss-release</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
                 <property>
                     <name>performRelease</name>
                     <value>true</value>
