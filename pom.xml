@@ -44,9 +44,7 @@
         <github.username>slacrey</github.username>
         <github.password>lf0554111</github.password>
         <gpg.passphrase>OSSRH-9954</gpg.passphrase>
-        <release.arguments>-Dusername=${github.username} -Dpassword=${github.password}
-            -Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release
-        </release.arguments>
+        <release.arguments>-Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release</release.arguments>
     </properties>
 
     <repositories>
@@ -79,7 +77,7 @@
 
     <profiles>
         <profile>
-            <id>sonatype-oss-release</id>
+            <id>release-sign-artifacts</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
                 <property>
