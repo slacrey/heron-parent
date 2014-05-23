@@ -150,9 +150,9 @@
                                 <autoVersionSubmodules>true</autoVersionSubmodules>
                                 <mavenExecutorId>forked-path</mavenExecutorId>
                                 <useReleaseProfile>false</useReleaseProfile>
-                                <releaseProfiles>sonatype-oss-release</releaseProfiles>
+                                <releaseProfiles>release</releaseProfiles>
                                 <goals>deploy</goals>
-                                <arguments>-Dgpg.passphrase=${gpg.passphrase}</arguments>
+                                <arguments>-Dgpg.passphrase=${gpg.passphrase} -Psonatype-oss-release </arguments>
                             </configuration>
                         </plugin>
                     </plugins>
